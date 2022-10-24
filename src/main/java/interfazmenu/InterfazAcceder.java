@@ -6,6 +6,11 @@ package interfazmenu;
 
 import java.awt.Color;
 
+// Controladores del usuario y autenticacion
+import backend.model.Usuario;
+import backend.controller.UsuarioCRUDImp;
+
+import javax.swing.JOptionPane;
 /**
  *
  * @author santi
@@ -36,7 +41,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
         ingresarusuario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        ingresarcontraseña = new javax.swing.JPasswordField();
+        ingresarcontrasena = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         entrar = new javax.swing.JLabel();
@@ -75,13 +80,13 @@ public class InterfazAcceder extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Barlow Condensed", 1, 24)); // NOI18N
         jLabel4.setText("CONTRASEÑA");
 
-        ingresarcontraseña.setForeground(new java.awt.Color(204, 204, 204));
-        ingresarcontraseña.setText("**********");
-        ingresarcontraseña.setBorder(null);
-        ingresarcontraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ingresarcontraseña.addMouseListener(new java.awt.event.MouseAdapter() {
+        ingresarcontrasena.setForeground(new java.awt.Color(204, 204, 204));
+        ingresarcontrasena.setText("**********");
+        ingresarcontrasena.setBorder(null);
+        ingresarcontrasena.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ingresarcontrasena.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                ingresarcontraseñaMousePressed(evt);
+                ingresarcontrasenaMousePressed(evt);
             }
         });
 
@@ -156,7 +161,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
                                         .addComponent(jLabel3)
                                         .addComponent(ingresarusuario, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
                                         .addComponent(jLabel4)
-                                        .addComponent(ingresarcontraseña)
+                                        .addComponent(ingresarcontrasena)
                                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -183,7 +188,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ingresarcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ingresarcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
@@ -216,22 +221,22 @@ public class InterfazAcceder extends javax.swing.JFrame {
             ingresarusuario.setText("");
             ingresarusuario.setForeground(Color.black);
         }
-        if(String.valueOf(ingresarcontraseña.getPassword()).isEmpty()){
-            ingresarcontraseña.setText("**********");
-            ingresarcontraseña.setForeground(Color.gray);
+        if(String.valueOf(ingresarcontrasena.getPassword()).isEmpty()){
+            ingresarcontrasena.setText("**********");
+            ingresarcontrasena.setForeground(Color.gray);
         }
     }//GEN-LAST:event_ingresarusuarioMousePressed
 
-    private void ingresarcontraseñaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarcontraseñaMousePressed
-        if(String.valueOf(ingresarcontraseña.getPassword()).equals("**********")){
-            ingresarcontraseña.setText("");
-            ingresarcontraseña.setForeground(Color.black);
+    private void ingresarcontrasenaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarcontrasenaMousePressed
+        if(String.valueOf(ingresarcontrasena.getPassword()).equals("**********")){
+            ingresarcontrasena.setText("");
+            ingresarcontrasena.setForeground(Color.black);
         }
         if(ingresarusuario.getText().isEmpty()){
             ingresarusuario.setText("Ingrese su nombre de usuario");
             ingresarusuario.setForeground(Color.gray);
         }  
-    }//GEN-LAST:event_ingresarcontraseñaMousePressed
+    }//GEN-LAST:event_ingresarcontrasenaMousePressed
 
     private void entrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarMouseEntered
         entrar.setBackground(new Color(27,75,157));
@@ -247,7 +252,19 @@ public class InterfazAcceder extends javax.swing.JFrame {
        //MenuAdmin a = new MenuAdmin();
         //a.setVisible(true);
         //this.setVisible(false);
-        incorrecta.setVisible(true);
+        UsuarioCRUDImp dao = new UsuarioCRUDImp();
+        
+        String usuarioIngresado = ingresarusuario.getText();
+        String contrasenaIngresada = ingresarcontrasena.getText();
+        try {
+            Usuario user2 = dao.authenticate(usuarioIngresado, contrasenaIngresada);
+            incorrecta.setVisible(true);                    
+            JOptionPane.showMessageDialog(null, "Usuario ingreso correctamente");
+        } catch (java.lang.Error e) {
+            System.out.println("Fallo la autenticacion para "+usuarioIngresado+"@"+contrasenaIngresada);
+            incorrecta.setVisible(true);        
+            JOptionPane.showMessageDialog(null, "Usuario o contrasena incorrecto");        }                
+        
     }//GEN-LAST:event_entrarMousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -294,7 +311,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel entrar;
     private javax.swing.JLabel incorrecta;
-    private javax.swing.JPasswordField ingresarcontraseña;
+    private javax.swing.JPasswordField ingresarcontrasena;
     private javax.swing.JTextField ingresarusuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
