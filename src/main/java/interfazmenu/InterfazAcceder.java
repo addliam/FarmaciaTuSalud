@@ -258,7 +258,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
         String contrasenaIngresada = ingresarcontrasena.getText();
         try {
             Usuario user2 = dao.authenticate(usuarioIngresado, contrasenaIngresada);
-            incorrecta.setVisible(true);                    
+            incorrecta.setVisible(false);                    
             JOptionPane.showMessageDialog(null, "Usuario ingreso correctamente");
         } catch (java.lang.Error e) {
             System.out.println("Fallo la autenticacion para "+usuarioIngresado+"@"+contrasenaIngresada);
