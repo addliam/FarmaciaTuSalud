@@ -17,6 +17,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
      */
     public InterfazAcceder() {
         initComponents();
+        incorrecta.setVisible(false);
     }
 
     /**
@@ -40,6 +41,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         entrar = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        incorrecta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,6 +128,10 @@ public class InterfazAcceder extends javax.swing.JFrame {
             }
         });
 
+        incorrecta.setFont(new java.awt.Font("Barlow Condensed", 2, 14)); // NOI18N
+        incorrecta.setForeground(new java.awt.Color(255, 0, 0));
+        incorrecta.setText("Usuario o contraseña incorrecta ");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -133,7 +139,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(157, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
@@ -154,7 +160,11 @@ public class InterfazAcceder extends javax.swing.JFrame {
                                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(incorrecta)
+                        .addGap(158, 158, 158)))
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -178,6 +188,8 @@ public class InterfazAcceder extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(incorrecta)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -232,9 +244,10 @@ public class InterfazAcceder extends javax.swing.JFrame {
     }//GEN-LAST:event_entrarMouseExited
 
     private void entrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarMousePressed
-        MenuAdmin a = new MenuAdmin();
-        a.setVisible(true);
-        this.setVisible(false);
+       //MenuAdmin a = new MenuAdmin();
+        //a.setVisible(true);
+        //this.setVisible(false);
+        incorrecta.setVisible(true);
     }//GEN-LAST:event_entrarMousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -280,6 +293,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel entrar;
+    private javax.swing.JLabel incorrecta;
     private javax.swing.JPasswordField ingresarcontraseña;
     private javax.swing.JTextField ingresarusuario;
     private javax.swing.JButton jButton1;
