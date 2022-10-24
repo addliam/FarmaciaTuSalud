@@ -1,6 +1,6 @@
-interfazmenu/MenuInvitado.class
-backend/model/Producto.class
-com/tusalud/farmaciatusalud/FarmaciaTuSalud.class
-backend/controller/ProductoCRUD.class
-backend/FarmaciaDb.class
-interfazmenu/MenuInvitado$1.class
+interfazmenu\MenuInvitado.class
+backend\model\Producto.class
+backend\controller\ProductoCRUD.class
+backend\FarmaciaDb.class
+com\tusalud\farmaciatusalud\FarmaciaTuSalud.class
+interfazmenu\MenuInvitado$1.class
