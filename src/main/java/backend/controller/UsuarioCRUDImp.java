@@ -72,7 +72,8 @@ public class UsuarioCRUDImp implements UsuarioCRUD {
 
     @Override
     public boolean isAdmin(Usuario usuario) {
-        return (usuario.getRol().equalsIgnoreCase("admin"));
+        String userRol = usuario.getRol();
+        return (userRol.equalsIgnoreCase("administrador"));
     }
 
     @Override
