@@ -9,6 +9,7 @@ import java.awt.Color;
 // Controladores del usuario y autenticacion
 import backend.model.Usuario;
 import backend.controller.UsuarioCRUDImp;
+import java.awt.Cursor;
 
 import javax.swing.JOptionPane;
 /**
@@ -17,6 +18,8 @@ import javax.swing.JOptionPane;
  */
 public class InterfazAcceder extends javax.swing.JFrame {
 
+    private int numIntentos = 0;
+    private int delayTime = 1;
     /**
      * Creates new form InterfazAcceder
      */
@@ -125,7 +128,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
         );
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/menu2.jpg"))); // NOI18N
-        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,26 +252,47 @@ public class InterfazAcceder extends javax.swing.JFrame {
     }//GEN-LAST:event_entrarMouseExited
 
     private void entrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarMousePressed
-       //MenuAdmin a = new MenuAdmin();
-        //a.setVisible(true);
-        //this.setVisible(false);
+        entrar.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));        
+        numIntentos += 1;
+        if (numIntentos > 3){
+            try {
+                Thread.sleep(1*delayTime);
+                delayTime += 2000;
+            } catch(InterruptedException ex){
+                System.out.println("INTERRUPTED");
+                Thread.currentThread().interrupt();
+            }         
+        }
+        
         UsuarioCRUDImp dao = new UsuarioCRUDImp();
         
         String usuarioIngresado = ingresarusuario.getText();
         String contrasenaIngresada = ingresarcontrasena.getText();
         try {
             Usuario user2 = dao.authenticate(usuarioIngresado, contrasenaIngresada);
-            incorrecta.setVisible(false);                    
-            JOptionPane.showMessageDialog(null, "Usuario ingreso correctamente");
+            incorrecta.setVisible(false);    
+            // ocultar la interfazAcceder
+            this.setVisible(false);
+            if (dao.isAdmin(user2)){
+                MenuAdmin menuAdmin = new MenuAdmin();                
+                menuAdmin.setVisible(true);
+                menuAdmin.setLocationRelativeTo(null);
+            }else{
+                MenuInvitado menuInvitado = new MenuInvitado();
+                menuInvitado.setVisible(true);      
+                menuInvitado.setLocationRelativeTo(null);                
+            }
         } catch (java.lang.Error e) {
-            System.out.println("Fallo la autenticacion para "+usuarioIngresado+"@"+contrasenaIngresada);
             incorrecta.setVisible(true);        
-            JOptionPane.showMessageDialog(null, "Usuario o contrasena incorrecto");        }                
+        }   
+        finally{
+            entrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));            
+        }
         
     }//GEN-LAST:event_entrarMousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        MenuInvitado a = new MenuInvitado();
+        MenuAdmin a = new MenuAdmin();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed

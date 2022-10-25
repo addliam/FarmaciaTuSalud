@@ -13,7 +13,6 @@ import backend.controller.UsuarioCRUDImp;
 public class UsuarioTest {
     public static void main(String[] args) {
         UsuarioCRUDImp dao = new UsuarioCRUDImp();
-
         Random rand = new Random();
         int rand_int = rand.nextInt(9999);        
         // CREATE

@@ -1,5 +1,7 @@
 package com.tusalud.farmaciatusalud;
 
+import interfazmenu.InterfazAcceder;
+
 /**
  *
  * @author codeli4m
@@ -7,6 +9,9 @@ package com.tusalud.farmaciatusalud;
 public class FarmaciaTuSalud {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Iniciando aplicacion!");
+        InterfazAcceder login = new InterfazAcceder();
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
     }
 }
