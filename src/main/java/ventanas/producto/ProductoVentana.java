@@ -34,6 +34,8 @@ public class ProductoVentana extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         PanelEditarEliminar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1024, 680));
@@ -64,10 +66,12 @@ public class ProductoVentana extends javax.swing.JFrame {
             .addGroup(PanelVerLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(537, Short.MAX_VALUE))
+                .addContainerGap(526, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Ver", PanelVer);
+
+        PanelAgregar.setBackground(new java.awt.Color(232, 250, 254));
 
         jLabel2.setText("AGREGAR");
 
@@ -85,28 +89,50 @@ public class ProductoVentana extends javax.swing.JFrame {
             .addGroup(PanelAgregarLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(526, Short.MAX_VALUE))
+                .addContainerGap(515, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Agregar", PanelAgregar);
 
+        PanelEditarEliminar.setBackground(new java.awt.Color(232, 250, 254));
+
+        jLabel1.setFont(new java.awt.Font("Barlow Condensed", 1, 24)); // NOI18N
         jLabel1.setText("EDITAR / ELIMINAR");
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("rodrigo/l/op/aña");
 
         javax.swing.GroupLayout PanelEditarEliminarLayout = new javax.swing.GroupLayout(PanelEditarEliminar);
         PanelEditarEliminar.setLayout(PanelEditarEliminarLayout);
         PanelEditarEliminarLayout.setHorizontalGroup(
             PanelEditarEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelEditarEliminarLayout.createSequentialGroup()
-                .addGap(228, 228, 228)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(382, Short.MAX_VALUE))
+                .addGap(384, 384, 384)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditarEliminarLayout.createSequentialGroup()
+                .addContainerGap(299, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(211, 211, 211))
         );
         PanelEditarEliminarLayout.setVerticalGroup(
             PanelEditarEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelEditarEliminarLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addContainerGap(550, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addGroup(PanelEditarEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(401, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Editar / Eliminar", PanelEditarEliminar);
@@ -124,8 +150,8 @@ public class ProductoVentana extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,6 +171,10 @@ public class ProductoVentana extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,9 +215,11 @@ public class ProductoVentana extends javax.swing.JFrame {
     private javax.swing.JPanel PanelAgregar;
     private javax.swing.JPanel PanelEditarEliminar;
     private javax.swing.JPanel PanelVer;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTabbedPane jTabbedPane2;
     // End of variables declaration//GEN-END:variables
