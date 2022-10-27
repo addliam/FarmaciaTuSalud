@@ -21,7 +21,6 @@ public class ProductoTest{
         prod.setStockActual(66);
         prod.setUnidadMedida("unidades");
         prod.setCantidadMedida(4);
-        
         // dao significa Data Access Object
 //        dao.save(prod);
         
