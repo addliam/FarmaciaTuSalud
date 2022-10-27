@@ -10,8 +10,6 @@ import java.awt.Color;
 import backend.model.Usuario;
 import backend.controller.UsuarioCRUDImp;
 import java.awt.Cursor;
-
-import javax.swing.JOptionPane;
 /**
  *
  * @author santi
