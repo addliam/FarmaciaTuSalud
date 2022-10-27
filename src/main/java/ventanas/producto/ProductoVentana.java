@@ -28,12 +28,26 @@ public class ProductoVentana extends javax.swing.JFrame {
     ProductoCRUDImp dao = new ProductoCRUDImp();
     private List<Producto> productosLista;    
     
+    private int privilegeLevel = 1;
+    
     public ProductoVentana() {
         initComponents();
         initProductsTableModel();
         initCategoriaModel();
+        setupTabbedPanesPrivileges();
     }
 
+    public void setPrivilegeLevel(int value){
+        this.privilegeLevel = value;
+    }
+    
+    private void setupTabbedPanesPrivileges(){
+        if (privilegeLevel!=1){
+            this.jTabbedPane2.setEnabledAt(1, false);
+            this.jTabbedPane2.setEnabledAt(2, false);        
+        }
+    }
+    
     private void initCategoriaModel(){
         CategoriaIdLabel.setText(categoriaList.get(0)[0]);
         for (int k=0; k < categoriaList.size(); k++){
