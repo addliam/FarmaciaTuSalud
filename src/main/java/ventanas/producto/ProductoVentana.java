@@ -145,8 +145,28 @@ public class ProductoVentana extends javax.swing.JFrame {
         UnidadMedidaComboBox = new javax.swing.JComboBox<>();
         PanelEditarEliminar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
 
         jMenuItem1.setText("jMenuItem1");
@@ -442,45 +462,84 @@ public class ProductoVentana extends javax.swing.JFrame {
         jTabbedPane2.addTab("Agregar", PanelAgregar);
 
         PanelEditarEliminar.setBackground(new java.awt.Color(232, 250, 254));
+        PanelEditarEliminar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Barlow Condensed", 1, 24)); // NOI18N
-        jLabel1.setText("EDITAR / ELIMINAR");
+        jLabel1.setFont(new java.awt.Font("Barlow Condensed SemiBold", 1, 22)); // NOI18N
+        jLabel1.setText("EDITAR / ELIMINAR PRODUCTO");
+        PanelEditarEliminar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 24, -1, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "               SELECCIÓN PRODUCTO", "PARACETAMOL" }));
+        PanelEditarEliminar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 320, 53));
 
-        jLabel4.setText("rodrigo/l/op/aña");
+        jLabel11.setBackground(new java.awt.Color(147, 176, 255));
+        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel11.setText("BUSQUE EL PRODUCTO QUE DESEA EDITAR");
+        PanelEditarEliminar.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, -1, -1));
 
-        javax.swing.GroupLayout PanelEditarEliminarLayout = new javax.swing.GroupLayout(PanelEditarEliminar);
-        PanelEditarEliminar.setLayout(PanelEditarEliminarLayout);
-        PanelEditarEliminarLayout.setHorizontalGroup(
-            PanelEditarEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelEditarEliminarLayout.createSequentialGroup()
-                .addGap(384, 384, 384)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditarEliminarLayout.createSequentialGroup()
-                .addContainerGap(304, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(211, 211, 211))
-        );
-        PanelEditarEliminarLayout.setVerticalGroup(
-            PanelEditarEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelEditarEliminarLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addGap(53, 53, 53)
-                .addGroup(PanelEditarEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(344, Short.MAX_VALUE))
-        );
+        jButton2.setBackground(new java.awt.Color(255, 153, 153));
+        jButton2.setFont(new java.awt.Font("Barlow Condensed Light", 0, 17)); // NOI18N
+        jButton2.setText("ELIMINAR");
+        PanelEditarEliminar.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, 150, 50));
+
+        jLabel4.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel4.setText("Cantidad de Medida");
+        PanelEditarEliminar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel12.setText("Stock Inicial");
+        PanelEditarEliminar.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, 20));
+
+        jLabel13.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel13.setText("Nombre");
+        PanelEditarEliminar.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel17.setText("ID");
+        PanelEditarEliminar.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel18.setText("Precio de Compra");
+        PanelEditarEliminar.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel19.setText("Unidad de Medida");
+        PanelEditarEliminar.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
+        PanelEditarEliminar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, 180, -1));
+        PanelEditarEliminar.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 180, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        PanelEditarEliminar.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 260, 120));
+
+        jTextField3.setBackground(new java.awt.Color(242, 242, 242));
+        PanelEditarEliminar.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 60, -1));
+        PanelEditarEliminar.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 180, -1));
+        PanelEditarEliminar.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 180, -1));
+
+        jLabel20.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel20.setText("Descripción");
+        PanelEditarEliminar.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+        PanelEditarEliminar.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 260, -1));
+
+        jButton4.setBackground(new java.awt.Color(155, 210, 242));
+        jButton4.setFont(new java.awt.Font("Barlow Condensed Light", 0, 17)); // NOI18N
+        jButton4.setText("BUSCAR");
+        PanelEditarEliminar.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, 150, 50));
+
+        jButton5.setBackground(new java.awt.Color(155, 210, 242));
+        jButton5.setFont(new java.awt.Font("Barlow Condensed Light", 0, 17)); // NOI18N
+        jButton5.setText("EDITAR");
+        PanelEditarEliminar.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 150, 50));
+
+        jLabel21.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel21.setText("Categoría");
+        PanelEditarEliminar.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ANALGÉSICO", " " }));
+        PanelEditarEliminar.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 150, -1));
 
         jTabbedPane2.addTab("Editar / Eliminar", PanelEditarEliminar);
 
@@ -524,10 +583,6 @@ public class ProductoVentana extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
         refreshTableProducts();
@@ -650,14 +705,26 @@ public class ProductoVentana extends javax.swing.JFrame {
     private javax.swing.JTextField PrecioProductoLabel;
     private javax.swing.JTextField StockInicialProductoLabel;
     private javax.swing.JComboBox<String> UnidadMedidaComboBox;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -670,8 +737,16 @@ public class ProductoVentana extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JButton limpiar;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
