@@ -50,7 +50,16 @@ public class ProductoCRUDImp implements ProductoCRUD {
             pstmt.setInt(8, producto.getId());
             pstmt.executeUpdate();
             
-            } catch (Exception e) {
+            }
+        catch (Exception e) {
+            System.out.println("ID: "+producto.getId());
+            System.out.println("NOMBRE: "+producto.getNombre());
+            System.out.println("DESCR: "+producto.getDescripcion());
+            System.out.println("PRECIO: "+producto.getPrecioCompra());
+            System.out.println("CATEG ID: "+producto.getCategoriaId());
+            System.out.println("STOCK: "+producto.getStockActual());
+            System.out.println("U.MEDIDA: "+producto.getUnidadMedida());
+            System.out.println("CANT MEDIDA: "+producto.getCantidadMedida());
             e.printStackTrace();
         }        
     }

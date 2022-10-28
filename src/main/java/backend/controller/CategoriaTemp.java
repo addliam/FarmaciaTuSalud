@@ -15,6 +15,22 @@ import java.util.List;
  */
 
 public class CategoriaTemp {
+    public String getCategoryName (int id){
+        String catName = "";
+        try {
+            Connection con = new FarmaciaDb().getConnection();
+            PreparedStatement ps = con.prepareStatement("select Categoria_nombre from Categorias where Categoria_id=?");
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                catName = rs.getString("Categoria_nombre");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return catName;
+    }
+    
     public List<String[]> getCategoryNameIdPairs(){
         List<String[]> categoryPairs = new ArrayList<>();        
         try {

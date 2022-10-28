@@ -619,6 +619,7 @@ public class ProductoVentana extends javax.swing.JFrame {
         PanelEditarEliminar.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
 
         EdProductoCategComboBox.setFont(new java.awt.Font("Barlow", 0, 15)); // NOI18N
+        EdProductoCategComboBox.setForeground(java.awt.Color.darkGray);
         EdProductoCategComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ANALGÉSICO", " " }));
         EdProductoCategComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -758,8 +759,9 @@ public class ProductoVentana extends javax.swing.JFrame {
         EdProductoNombreLabel.setText(fprod.getNombre());
         EdProductoDescripcionLabel.setText(fprod.getDescripcion());
         EdProductoCantidadMedidaLabel.setText(String.valueOf(fprod.getCantidadMedida()));
-        EdProductoCategComboBox.setSelectedIndex(0);
-        EdProductoCategIdLabel.setText("1001");
+        String catName = new CategoriaTemp().getCategoryName(fprod.getCategoriaId());    
+        EdProductoCategComboBox.setSelectedItem(catName);
+        EdProductoCategIdLabel.setText(String.valueOf(fprod.getCategoriaId()));
         EdProductoPrecioCompra.setText(String.valueOf(fprod.getPrecioCompra()));
         EdProductoStockLabel.setText(String.valueOf(fprod.getStockActual()));
     }//GEN-LAST:event_EdBuscarButtonActionPerformed
@@ -782,6 +784,7 @@ public class ProductoVentana extends javax.swing.JFrame {
         String entUnidadMedida = EdUnidadMedidaComboBox.getSelectedItem().toString(); 
         String entCantidadMedida = EdProductoCantidadMedidaLabel.getText();
         String errorField = validateFields(entNombre, entDescripcion, entCategoriaId, entPrecioCompra, entStockInicial, entCantidadMedida);
+        System.out.println(entNombre+entDescripcion+entCategoriaId+entPrecioCompra+entStockInicial+entUnidadMedida+entCantidadMedida);
         if (!"".equals(errorField)){ /* !="" */
             JOptionPane.showMessageDialog(null, errorField, "Validacion de campos",0);
         }else{

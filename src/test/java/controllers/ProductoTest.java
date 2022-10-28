@@ -26,7 +26,7 @@ public class ProductoTest{
         
         // UPDATE
         Producto prod2 = new Producto();
-        prod2.setId(1006);
+        prod2.setId(1000);
         prod2.setNombre("PruebaCustomName");        
         prod2.setDescripcion("Probando producto");
         prod2.setPrecioCompra(99);
@@ -35,7 +35,7 @@ public class ProductoTest{
         prod2.setUnidadMedida("unidades");
         prod2.setCantidadMedida(4);         
         
-//        dao.update(prod2);
+        dao.update(prod2);
 
         // DELETE
         Producto prod3 = new Producto();
@@ -43,28 +43,28 @@ public class ProductoTest{
 //        dao.delete(prod3);
 
         // GET SINGLE PRODUCT
-        Producto prod4 = dao.get(1002);
+//        Producto prod4 = dao.get(1002);
 //        System.out.println(prod4.getId()+"\t"+prod4.getNombre()+"\t"+prod4.getPrecioCompra()+"\t"+prod4.getStockActual());
         
         // GET PAIRS ID - NAME 
-        List<String[]> pairs = dao.getIdNamePairs();
-        for (String[] pair: pairs){
-            System.out.println(pair[0]+" <-> "+pair[1]);
-        }
-
-        long start2 = System.currentTimeMillis();
+//        List<String[]> pairs = dao.getIdNamePairs();
+//        for (String[] pair: pairs){
+//            System.out.println(pair[0]+" <-> "+pair[1]);
+//        }
+//
+//        long start2 = System.currentTimeMillis();
 
         // GET LIST OF PRODUCTS
-        System.out.println("LISTA DE PRODUCTOS");
-        List<Producto> productosLista = dao.list();
-        System.out.println("ID\tNOMBRE\tCATEGORIA\tPRECIO\tSTOCK");
-        for (Producto producto: productosLista){
-            System.out.println(producto.getId()+"\t"+producto.getNombre()+"\t"+producto.getCategoriaId()+"\t"+producto.getPrecioCompra()+"\t"+producto.getStockActual()); 
-        }
-        
-        long end2 = System.currentTimeMillis();      
-        System.out.println("Elapsed Time in milli seconds: "+ (end2-start2));
-        
+//        System.out.println("LISTA DE PRODUCTOS");
+//        List<Producto> productosLista = dao.list();
+//        System.out.println("ID\tNOMBRE\tCATEGORIA\tPRECIO\tSTOCK");
+//        for (Producto producto: productosLista){
+//            System.out.println(producto.getId()+"\t"+producto.getNombre()+"\t"+producto.getCategoriaId()+"\t"+producto.getPrecioCompra()+"\t"+producto.getStockActual()); 
+//        }
+//        
+//        long end2 = System.currentTimeMillis();      
+//        System.out.println("Elapsed Time in milli seconds: "+ (end2-start2));
+//        
         
     }
 }
