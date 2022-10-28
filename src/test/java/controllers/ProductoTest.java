@@ -46,6 +46,12 @@ public class ProductoTest{
         Producto prod4 = dao.get(1002);
 //        System.out.println(prod4.getId()+"\t"+prod4.getNombre()+"\t"+prod4.getPrecioCompra()+"\t"+prod4.getStockActual());
         
+        // GET PAIRS ID - NAME 
+        List<String[]> pairs = dao.getIdNamePairs();
+        for (String[] pair: pairs){
+            System.out.println(pair[0]+" <-> "+pair[1]);
+        }
+
         long start2 = System.currentTimeMillis();
 
         // GET LIST OF PRODUCTS

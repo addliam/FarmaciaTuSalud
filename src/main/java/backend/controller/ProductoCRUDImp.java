@@ -67,6 +67,23 @@ public class ProductoCRUDImp implements ProductoCRUD {
         }        
     }
 
+    public List<String[]> getIdNamePairs(){
+        // TODO: sort alphabetically
+        List<String[]> pairs = new ArrayList<>();
+        try {
+            Connection con = new FarmaciaDb().getConnection();           
+            PreparedStatement ps = con.prepareStatement("select Producto_id, Producto_nombre FROM Productos");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                String[] pair = {rs.getString("Producto_id"),rs.getString("Producto_nombre")};
+                pairs.add(pair);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return pairs;
+    }
+    
     @Override
     public Producto get(int id) {
         Producto prod = new Producto();

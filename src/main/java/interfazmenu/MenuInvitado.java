@@ -4,6 +4,7 @@
  */
 package interfazmenu;
 
+import ventanas.producto.ProductoVentana;
 /**
  *
  * @author santi
@@ -67,6 +68,11 @@ public class MenuInvitado extends javax.swing.JFrame {
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productos.2.jpg"))); // NOI18N
         jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/productos.3.jpg"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.2.jpg"))); // NOI18N
         jButton3.setBorder(null);
@@ -141,6 +147,14 @@ public class MenuInvitado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        ProductoVentana prodVentana = new ProductoVentana();
+        prodVentana.setPrivilegeLevel(0);        
+        this.setVisible(false);
+        prodVentana.setLocationRelativeTo(null);
+        prodVentana.setVisible(true); 
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

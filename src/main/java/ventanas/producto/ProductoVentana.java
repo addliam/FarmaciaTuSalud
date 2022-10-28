@@ -14,7 +14,10 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @authors Rodrigo - Dayron - Liam
+ * @author Rodrigo
+ * @author Dayron
+ * @author Liam
+ * 
  */
 public class ProductoVentana extends javax.swing.JFrame {
 
@@ -23,39 +26,74 @@ public class ProductoVentana extends javax.swing.JFrame {
      */
     // declare TableModel
     DefaultComboBoxModel CategoriaNombreModel = new DefaultComboBoxModel();
+    
     List<String[]> categoriaList = new CategoriaTemp().getCategoryNameIdPairs();    
     DefaultTableModel tableProductosModel;
     ProductoCRUDImp dao = new ProductoCRUDImp();
     private List<Producto> productosLista;    
+    // ComboBox Editar Producto Nombre - ID
+    DefaultComboBoxModel ProductoIdComboBoxModel = new DefaultComboBoxModel(); 
+    // ComboBox Editar categorida
+    DefaultComboBoxModel categComboBoxModel = new DefaultComboBoxModel();     
     
-    private int privilegeLevel = 1;
+    List<String[]> productPairsList;
+    
+    private int privilegeLevel = 0;
     
     public ProductoVentana() {
         initComponents();
+        
         initProductsTableModel();
         initCategoriaModel();
         setupTabbedPanesPrivileges();
+        
+        initProductoPairsModel();
+        
+        initEdCategoriaModel();
+    }
+    
+    private void initProductoPairsModel(){
+        productPairsList = dao.getIdNamePairs();
+        for (int k=0; k < productPairsList.size(); k++){
+            String prodIdName = productPairsList.get(k)[1]+" - "+productPairsList.get(k)[0];
+            ProductoIdComboBoxModel.insertElementAt(prodIdName, k);            
+        }        
+        EdProductoComboBox.setModel(ProductoIdComboBoxModel);
+        EdProductoComboBox.setSelectedIndex(0);
     }
 
     public void setPrivilegeLevel(int value){
         this.privilegeLevel = value;
+        setupTabbedPanesPrivileges();
     }
     
     private void setupTabbedPanesPrivileges(){
-        if (privilegeLevel!=1){
+        if (this.privilegeLevel!=1){
             this.jTabbedPane2.setEnabledAt(1, false);
             this.jTabbedPane2.setEnabledAt(2, false);        
         }
+        else{
+            this.jTabbedPane2.setEnabledAt(1, true);
+            this.jTabbedPane2.setEnabledAt(2, true);        
+        }        
     }
     
     private void initCategoriaModel(){
-        CategoriaIdLabel.setText(categoriaList.get(0)[0]);
         for (int k=0; k < categoriaList.size(); k++){
             String categoriaNombre = categoriaList.get(k)[1];
             CategoriaNombreModel.insertElementAt(categoriaNombre, k);            
         }
         CategoriaComboBox.setModel(CategoriaNombreModel);
         CategoriaComboBox.setSelectedIndex(0);
+    }
+    
+    private void initEdCategoriaModel(){
+        for (int k=0; k < categoriaList.size(); k++){
+            String categoriaNombre = categoriaList.get(k)[1];
+            categComboBoxModel.insertElementAt(categoriaNombre, k);            
+        }
+        EdProductoCategComboBox.setModel(categComboBoxModel);
+        EdProductoCategComboBox.setSelectedIndex(0);    
     }
     
     private void clearTable(){
@@ -145,28 +183,28 @@ public class ProductoVentana extends javax.swing.JFrame {
         UnidadMedidaComboBox = new javax.swing.JComboBox<>();
         PanelEditarEliminar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        EdProductoComboBox = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        EdEliminarButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        EdProductoStockLabel = new javax.swing.JTextField();
+        EdProductoCantidadMedidaLabel = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        EdProductoDescripcionLabel = new javax.swing.JTextArea();
+        EdProductoCategIdLabel = new javax.swing.JTextField();
+        EdProductoPrecioCompra = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        EdProductoNombreLabel = new javax.swing.JTextField();
+        EdBuscarButton = new javax.swing.JButton();
+        EdEditarButton = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        EdProductoCategComboBox = new javax.swing.JComboBox<>();
+        EdUnidadMedidaComboBox = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
 
         jMenuItem1.setText("jMenuItem1");
@@ -277,8 +315,12 @@ public class ProductoVentana extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
         jLabel7.setText("Descripcion:");
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setWheelScrollingEnabled(false);
+
         DescripcionProductoLabel.setColumns(8);
         DescripcionProductoLabel.setFont(new java.awt.Font("Barlow", 0, 16)); // NOI18N
+        DescripcionProductoLabel.setLineWrap(true);
         DescripcionProductoLabel.setRows(5);
         jScrollPane1.setViewportView(DescripcionProductoLabel);
 
@@ -362,43 +404,47 @@ public class ProductoVentana extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelAgregarLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(PanelAgregarLayout.createSequentialGroup()
                         .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelAgregarLayout.createSequentialGroup()
-                                .addGap(327, 327, 327)
-                                .addComponent(AgregarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(PanelAgregarLayout.createSequentialGroup()
                                 .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel8))
-                                .addGap(19, 19, 19)
-                                .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(StockInicialProductoLabel, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(PrecioProductoLabel, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CategoriaComboBox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CategoriaIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(PanelAgregarLayout.createSequentialGroup()
+                                        .addGap(327, 327, 327)
+                                        .addComponent(AgregarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(PanelAgregarLayout.createSequentialGroup()
+                                        .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel8))
+                                        .addGap(19, 19, 19)
+                                        .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(StockInicialProductoLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(PrecioProductoLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(CategoriaComboBox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(24, 24, 24)
+                                        .addComponent(jLabel15)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(CategoriaIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(121, 121, 121))
                     .addGroup(PanelAgregarLayout.createSequentialGroup()
                         .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAgregarLayout.createSequentialGroup()
-                                .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(NombreProductoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(74, 74, 74))
                             .addGroup(PanelAgregarLayout.createSequentialGroup()
                                 .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 403, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 403, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAgregarLayout.createSequentialGroup()
+                                .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NombreProductoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(10, 10, 10)))
+                        .addGap(44, 44, 44)
                         .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAgregarLayout.createSequentialGroup()
                                 .addComponent(jLabel16)
@@ -408,8 +454,8 @@ public class ProductoVentana extends javax.swing.JFrame {
                                 .addGap(43, 43, 43)))
                         .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(UnidadMedidaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CantidadMedidaProductoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(121, 121, 121))
+                            .addComponent(CantidadMedidaProductoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(77, 77, 77))))
         );
         PanelAgregarLayout.setVerticalGroup(
             PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -468,23 +514,34 @@ public class ProductoVentana extends javax.swing.JFrame {
         jLabel1.setText("EDITAR / ELIMINAR PRODUCTO");
         PanelEditarEliminar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 24, -1, -1));
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "               SELECCIÓN PRODUCTO", "PARACETAMOL" }));
-        PanelEditarEliminar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 320, 53));
+        EdProductoComboBox.setFont(new java.awt.Font("Barlow", 0, 16)); // NOI18N
+        EdProductoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "          Seleccione producto" }));
+        EdProductoComboBox.setBorder(javax.swing.BorderFactory.createEmptyBorder(2, 10, 2, 10));
+        EdProductoComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EdProductoComboBoxActionPerformed(evt);
+            }
+        });
+        PanelEditarEliminar.add(EdProductoComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 320, 40));
 
         jLabel11.setBackground(new java.awt.Color(147, 176, 255));
         jLabel11.setForeground(new java.awt.Color(153, 153, 153));
         jLabel11.setText("BUSQUE EL PRODUCTO QUE DESEA EDITAR");
         PanelEditarEliminar.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 153));
-        jButton2.setFont(new java.awt.Font("Barlow Condensed Light", 0, 17)); // NOI18N
-        jButton2.setText("ELIMINAR");
-        PanelEditarEliminar.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, 150, 50));
+        EdEliminarButton.setBackground(java.awt.Color.red);
+        EdEliminarButton.setFont(new java.awt.Font("Barlow Condensed Light", 0, 17)); // NOI18N
+        EdEliminarButton.setText("ELIMINAR");
+        EdEliminarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EdEliminarButtonActionPerformed(evt);
+            }
+        });
+        PanelEditarEliminar.add(EdEliminarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 420, 150, 50));
 
         jLabel4.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
         jLabel4.setText("Cantidad de Medida");
-        PanelEditarEliminar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, -1, -1));
+        PanelEditarEliminar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
         jLabel12.setText("Stock Inicial");
@@ -504,42 +561,75 @@ public class ProductoVentana extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
         jLabel19.setText("Unidad de Medida");
-        PanelEditarEliminar.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
-        PanelEditarEliminar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, 180, -1));
-        PanelEditarEliminar.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 180, -1));
+        PanelEditarEliminar.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        EdProductoStockLabel.setFont(new java.awt.Font("Barlow", 0, 15)); // NOI18N
+        PanelEditarEliminar.add(EdProductoStockLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, 180, -1));
 
-        PanelEditarEliminar.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 260, 120));
+        EdProductoCantidadMedidaLabel.setFont(new java.awt.Font("Barlow", 0, 15)); // NOI18N
+        PanelEditarEliminar.add(EdProductoCantidadMedidaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 210, 120, -1));
 
-        jTextField3.setBackground(new java.awt.Color(242, 242, 242));
-        PanelEditarEliminar.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 60, -1));
-        PanelEditarEliminar.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 180, -1));
-        PanelEditarEliminar.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 180, -1));
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        EdProductoDescripcionLabel.setColumns(20);
+        EdProductoDescripcionLabel.setFont(new java.awt.Font("Barlow", 0, 15)); // NOI18N
+        EdProductoDescripcionLabel.setLineWrap(true);
+        EdProductoDescripcionLabel.setRows(5);
+        jScrollPane2.setViewportView(EdProductoDescripcionLabel);
+
+        PanelEditarEliminar.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 320, 120));
+
+        EdProductoCategIdLabel.setEditable(false);
+        EdProductoCategIdLabel.setBackground(new java.awt.Color(242, 242, 242));
+        EdProductoCategIdLabel.setFont(new java.awt.Font("Barlow", 0, 15)); // NOI18N
+        PanelEditarEliminar.add(EdProductoCategIdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 60, -1));
+
+        EdProductoPrecioCompra.setFont(new java.awt.Font("Barlow", 0, 15)); // NOI18N
+        PanelEditarEliminar.add(EdProductoPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 180, -1));
 
         jLabel20.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
         jLabel20.setText("Descripción");
         PanelEditarEliminar.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
-        PanelEditarEliminar.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 260, -1));
 
-        jButton4.setBackground(new java.awt.Color(155, 210, 242));
-        jButton4.setFont(new java.awt.Font("Barlow Condensed Light", 0, 17)); // NOI18N
-        jButton4.setText("BUSCAR");
-        PanelEditarEliminar.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, 150, 50));
+        EdProductoNombreLabel.setFont(new java.awt.Font("Barlow", 0, 15)); // NOI18N
+        PanelEditarEliminar.add(EdProductoNombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 320, -1));
 
-        jButton5.setBackground(new java.awt.Color(155, 210, 242));
-        jButton5.setFont(new java.awt.Font("Barlow Condensed Light", 0, 17)); // NOI18N
-        jButton5.setText("EDITAR");
-        PanelEditarEliminar.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 150, 50));
+        EdBuscarButton.setBackground(new java.awt.Color(79, 132, 255));
+        EdBuscarButton.setFont(new java.awt.Font("Barlow Condensed Light", 0, 17)); // NOI18N
+        EdBuscarButton.setText("BUSCAR");
+        EdBuscarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EdBuscarButtonActionPerformed(evt);
+            }
+        });
+        PanelEditarEliminar.add(EdBuscarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 150, 40));
+
+        EdEditarButton.setBackground(new java.awt.Color(79, 132, 255));
+        EdEditarButton.setFont(new java.awt.Font("Barlow Condensed Light", 0, 17)); // NOI18N
+        EdEditarButton.setText("EDITAR");
+        EdEditarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EdEditarButtonActionPerformed(evt);
+            }
+        });
+        PanelEditarEliminar.add(EdEditarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, 150, 50));
 
         jLabel21.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
         jLabel21.setText("Categoría");
         PanelEditarEliminar.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ANALGÉSICO", " " }));
-        PanelEditarEliminar.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 150, -1));
+        EdProductoCategComboBox.setFont(new java.awt.Font("Barlow", 0, 15)); // NOI18N
+        EdProductoCategComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ANALGÉSICO", " " }));
+        EdProductoCategComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EdProductoCategComboBoxActionPerformed(evt);
+            }
+        });
+        PanelEditarEliminar.add(EdProductoCategComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 150, -1));
+
+        EdUnidadMedidaComboBox.setFont(new java.awt.Font("Barlow", 0, 16)); // NOI18N
+        EdUnidadMedidaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "unidad", "gramo", "miligramo", "litro", "mililitro" }));
+        PanelEditarEliminar.add(EdUnidadMedidaComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 120, -1));
 
         jTabbedPane2.addTab("Editar / Eliminar", PanelEditarEliminar);
 
@@ -657,6 +747,73 @@ public class ProductoVentana extends javax.swing.JFrame {
         CategoriaIdLabel.setText(catDynamicId);
     }//GEN-LAST:event_CategoriaComboBoxActionPerformed
 
+    private void EdProductoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdProductoComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EdProductoComboBoxActionPerformed
+
+    private void EdBuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdBuscarButtonActionPerformed
+        int edProductIndex = EdProductoComboBox.getSelectedIndex();
+        int productSearchId = Integer.parseInt(productPairsList.get(edProductIndex)[0]);
+        Producto fprod = dao.get(productSearchId);
+        EdProductoNombreLabel.setText(fprod.getNombre());
+        EdProductoDescripcionLabel.setText(fprod.getDescripcion());
+        EdProductoCantidadMedidaLabel.setText(String.valueOf(fprod.getCantidadMedida()));
+        EdProductoCategComboBox.setSelectedIndex(0);
+        EdProductoCategIdLabel.setText("1001");
+        EdProductoPrecioCompra.setText(String.valueOf(fprod.getPrecioCompra()));
+        EdProductoStockLabel.setText(String.valueOf(fprod.getStockActual()));
+    }//GEN-LAST:event_EdBuscarButtonActionPerformed
+
+    private void EdProductoCategComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdProductoCategComboBoxActionPerformed
+        int catIndex = EdProductoCategComboBox.getSelectedIndex();
+        String catDynamicId = categoriaList.get(catIndex)[0];
+        EdProductoCategIdLabel.setText(catDynamicId);        
+    }//GEN-LAST:event_EdProductoCategComboBoxActionPerformed
+
+    private void EdEditarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdEditarButtonActionPerformed
+        // TODO add your handling code here:
+        Producto prod = new Producto();    
+        int entProductoId =  Integer.parseInt(EdProductoComboBox.getSelectedItem().toString().split(" - ")[1]);
+        String entNombre = EdProductoNombreLabel.getText();
+        String entDescripcion = EdProductoDescripcionLabel.getText();
+        String entCategoriaId = EdProductoCategIdLabel.getText();
+        String entPrecioCompra = EdProductoPrecioCompra.getText();
+        String entStockInicial = EdProductoStockLabel.getText();
+        String entUnidadMedida = EdUnidadMedidaComboBox.getSelectedItem().toString(); 
+        String entCantidadMedida = EdProductoCantidadMedidaLabel.getText();
+        String errorField = validateFields(entNombre, entDescripcion, entCategoriaId, entPrecioCompra, entStockInicial, entCantidadMedida);
+        if (!"".equals(errorField)){ /* !="" */
+            JOptionPane.showMessageDialog(null, errorField, "Validacion de campos",0);
+        }else{
+            prod.setId(entProductoId);
+            prod.setNombre(entNombre);        
+            prod.setDescripcion(entDescripcion);
+            prod.setPrecioCompra(Float.parseFloat(entPrecioCompra));
+            prod.setCategoriaId(Integer.parseInt(entCategoriaId));
+            prod.setStockActual(Integer.parseInt(entStockInicial));
+            prod.setUnidadMedida(entUnidadMedida);
+            prod.setCantidadMedida(Integer.parseInt(entCantidadMedida));                
+            dao.update(prod);
+            JOptionPane.showMessageDialog(null, "Producto actualizado correctamente!", "Farmacia Tu Salud",1);            
+        }        
+    }//GEN-LAST:event_EdEditarButtonActionPerformed
+
+    private void EdEliminarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdEliminarButtonActionPerformed
+        String[] productSplitGuion = EdProductoComboBox.getSelectedItem().toString().split(" - ");
+        String productoNombre = productSplitGuion[0];
+        String productoId = productSplitGuion[1];
+        
+        String mensaje = "Estas seguro que deseas eliminar Producto: "+productoNombre+" con ID: "+productoId+" ?";
+        int eliminarConfirmacion = JOptionPane.showConfirmDialog(null, mensaje, "Confirmacion eliminacion", 0);
+        if (eliminarConfirmacion==0){
+            Producto delProducto = new Producto();
+            delProducto.setId(Integer.parseInt(productoId));
+            dao.delete(delProducto);
+            JOptionPane.showMessageDialog(null, "Producto eliminado correctamente!", "Farmacia Tu Salud",1);            
+
+        }
+    }//GEN-LAST:event_EdEliminarButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -698,6 +855,18 @@ public class ProductoVentana extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CategoriaComboBox;
     private javax.swing.JTextField CategoriaIdLabel;
     private javax.swing.JTextArea DescripcionProductoLabel;
+    private javax.swing.JButton EdBuscarButton;
+    private javax.swing.JButton EdEditarButton;
+    private javax.swing.JButton EdEliminarButton;
+    private javax.swing.JTextField EdProductoCantidadMedidaLabel;
+    private javax.swing.JComboBox<String> EdProductoCategComboBox;
+    private javax.swing.JTextField EdProductoCategIdLabel;
+    private javax.swing.JComboBox<String> EdProductoComboBox;
+    private javax.swing.JTextArea EdProductoDescripcionLabel;
+    private javax.swing.JTextField EdProductoNombreLabel;
+    private javax.swing.JTextField EdProductoPrecioCompra;
+    private javax.swing.JTextField EdProductoStockLabel;
+    private javax.swing.JComboBox<String> EdUnidadMedidaComboBox;
     private javax.swing.JTextField NombreProductoLabel;
     private javax.swing.JPanel PanelAgregar;
     private javax.swing.JPanel PanelEditarEliminar;
@@ -705,12 +874,7 @@ public class ProductoVentana extends javax.swing.JFrame {
     private javax.swing.JTextField PrecioProductoLabel;
     private javax.swing.JTextField StockInicialProductoLabel;
     private javax.swing.JComboBox<String> UnidadMedidaComboBox;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -740,13 +904,6 @@ public class ProductoVentana extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JButton limpiar;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
