@@ -45,7 +45,8 @@ public class AlertaComponente extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(270, 56));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(235, 235, 235));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel3.setForeground(new java.awt.Color(0, 102, 255));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -62,7 +63,7 @@ public class AlertaComponente extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Swis721 Blk BT", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Barlow", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 29, 110));
         jLabel1.setText("PARACETAMOL");
 
@@ -85,22 +86,24 @@ public class AlertaComponente extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Candara", 3, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Barlow", 1, 15)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("El producto esta apunto de vencer");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 200, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 240, -1));
 
-        jLabel3.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Barlow", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("FECHA:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Swis721 Blk BT", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Barlow", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("13/10/2023");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Calendario.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(208, 90, 60, 60));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 60, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
