@@ -4,6 +4,10 @@
  */
 package ventanas.alertas;
 
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+
 /**
  *
  * @author codeli4m
@@ -15,8 +19,23 @@ public class AlertaVentana extends javax.swing.JFrame {
      */
     public AlertaVentana() {
         initComponents();
+        setupPanel(3);
     }
-
+   
+    private void setupPanel(int nRows){
+        int maxh = 150*nRows+20*(nRows-1);
+        Dimension dim = new Dimension(938, maxh);
+        this.jPanelAlertasContainer.setMaximumSize(dim);
+        this.jPanelAlertasContainer.setPreferredSize(dim);        
+        
+        GridLayout grdLayout = new GridLayout(0, 3,20,20 );
+        this.jPanelAlertasContainer.setLayout(grdLayout);
+        for (int i=0; i<7;i++){
+            AlertaComponente alertComponent = new AlertaComponente();
+            jPanelAlertasContainer.add(alertComponent);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,13 +46,11 @@ public class AlertaVentana extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelHeader = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jPanelContainer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanelAlertasContainer = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1024, 640));
@@ -45,15 +62,26 @@ public class AlertaVentana extends javax.swing.JFrame {
         jPanelHeader.setMinimumSize(new java.awt.Dimension(1024, 140));
         jPanelHeader.setPreferredSize(new java.awt.Dimension(1024, 140));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Parte superior del panel de alertas.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jLabel1.setMaximumSize(new java.awt.Dimension(1024, 140));
+        jLabel1.setMinimumSize(new java.awt.Dimension(1024, 140));
+        jLabel1.setPreferredSize(new java.awt.Dimension(1024, 140));
+
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
         jPanelHeaderLayout.setHorizontalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(jPanelHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelHeader, java.awt.BorderLayout.PAGE_START);
@@ -63,57 +91,24 @@ public class AlertaVentana extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 0, 102));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setMaximumSize(new java.awt.Dimension(280, 160));
 
         jPanelAlertasContainer.setBackground(new java.awt.Color(255, 255, 51));
-        jPanelAlertasContainer.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.TRAILING, 48, 2));
+        jPanelAlertasContainer.setMaximumSize(new java.awt.Dimension(938, 900));
+        jPanelAlertasContainer.setMinimumSize(new java.awt.Dimension(938, 900));
+        jPanelAlertasContainer.setPreferredSize(new java.awt.Dimension(938, 900));
+        jPanelAlertasContainer.setRequestFocusEnabled(false);
 
-        jPanel4.setBackground(new java.awt.Color(51, 255, 0));
-        jPanel4.setPreferredSize(new java.awt.Dimension(270, 150));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanelAlertasContainerLayout = new javax.swing.GroupLayout(jPanelAlertasContainer);
+        jPanelAlertasContainer.setLayout(jPanelAlertasContainerLayout);
+        jPanelAlertasContainerLayout.setHorizontalGroup(
+            jPanelAlertasContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 938, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+        jPanelAlertasContainerLayout.setVerticalGroup(
+            jPanelAlertasContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
         );
-
-        jPanelAlertasContainer.add(jPanel4);
-
-        jPanel3.setBackground(new java.awt.Color(51, 255, 0));
-        jPanel3.setPreferredSize(new java.awt.Dimension(270, 150));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
-
-        jPanelAlertasContainer.add(jPanel3);
-
-        jPanel7.setBackground(new java.awt.Color(0, 153, 204));
-        jPanel7.setPreferredSize(new java.awt.Dimension(270, 150));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
-
-        jPanelAlertasContainer.add(jPanel7);
 
         jScrollPane1.setViewportView(jPanelAlertasContainer);
 
@@ -124,14 +119,14 @@ public class AlertaVentana extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jPanelContainer.add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -177,10 +172,8 @@ public class AlertaVentana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanelAlertasContainer;
     private javax.swing.JPanel jPanelContainer;
     private javax.swing.JPanel jPanelHeader;
