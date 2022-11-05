@@ -38,6 +38,7 @@ public class AlertaComponente extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(270, 56));
         setMinimumSize(new java.awt.Dimension(270, 56));
         setPreferredSize(new java.awt.Dimension(270, 150));
+        setRequestFocusEnabled(false);
 
         jPanel1.setBackground(new java.awt.Color(196, 221, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(270, 56));
