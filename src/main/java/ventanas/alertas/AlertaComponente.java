@@ -35,8 +35,8 @@ public class AlertaComponente extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(270, 56));
-        setMinimumSize(new java.awt.Dimension(270, 56));
+        setMaximumSize(new java.awt.Dimension(270, 150));
+        setMinimumSize(new java.awt.Dimension(270, 150));
         setPreferredSize(new java.awt.Dimension(270, 150));
         setRequestFocusEnabled(false);
 

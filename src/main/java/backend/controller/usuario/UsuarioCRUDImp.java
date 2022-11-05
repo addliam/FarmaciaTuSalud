@@ -1,6 +1,6 @@
-package backend.controller;
+package backend.controller.usuario;
 // import producto model
-import backend.model.Producto;
+import backend.controller.Util;
 // import database config
 import backend.FarmaciaDb;
 import backend.model.Usuario;

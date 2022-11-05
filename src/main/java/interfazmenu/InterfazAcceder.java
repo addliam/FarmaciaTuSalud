@@ -8,7 +8,7 @@ import java.awt.Color;
 
 // Controladores del usuario y autenticacion
 import backend.model.Usuario;
-import backend.controller.UsuarioCRUDImp;
+import backend.controller.usuario.UsuarioCRUDImp;
 import java.awt.Cursor;
 /**
  *

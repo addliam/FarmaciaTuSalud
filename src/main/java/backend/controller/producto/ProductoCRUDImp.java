@@ -1,4 +1,4 @@
-package backend.controller;
+package backend.controller.producto;
 // import producto model
 import backend.model.Producto;
 // import database config

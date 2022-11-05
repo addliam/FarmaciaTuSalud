@@ -1,4 +1,4 @@
-package backend.controller;
+package backend.controller.producto;
 
 import backend.model.Producto;
 import java.util.List;
