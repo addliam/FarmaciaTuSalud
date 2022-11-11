@@ -8,13 +8,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 
-public class CategoríaCRUDImp implements CategoriaCRUD {
+public class CategoriaCRUDImp implements CategoriaCRUD {
 
     @Override
     public void save(Categoria categoria) {
         try {
             Connection con = new FarmaciaDb().getConnection();
-            PreparedStatement pstmt = con.prepareStatement("INSERT INTO Productos(Producto_nombre,Producto_descripcion, Categoria_id) VALUES (?,?,?)");
+            PreparedStatement pstmt = con.prepareStatement("INSERT INTO Categorias(Producto_nombre,Producto_descripcion, Categoria_id) VALUES (?,?,?)");
             pstmt.setInt(1, categoria.getId());
             pstmt.setString(2, categoria.getNombre());
             pstmt.setString(3, categoria.getDesc());
@@ -30,7 +30,7 @@ public class CategoríaCRUDImp implements CategoriaCRUD {
     public void update(Categoria categoria) {
         try {
             Connection con = new FarmaciaDb().getConnection();
-            PreparedStatement pstmt = con.prepareStatement("UPDATE Productos SET Producto_nombre=?, Producto_descripcion=?, Categoria_id=?");
+            PreparedStatement pstmt = con.prepareStatement("UPDATE Categorias SET Producto_nombre=?, Producto_descripcion=?, Categoria_id=?");
             pstmt.setString(1,categoria.getNombre());
             pstmt.setString(2, categoria.getDesc());
             pstmt.setInt(3, categoria.getId());
@@ -46,7 +46,7 @@ public class CategoríaCRUDImp implements CategoriaCRUD {
     public void delete(Categoria categoria) {
         try {
             Connection con = new FarmaciaDb().getConnection();
-            PreparedStatement pstmt = con.prepareStatement("DELETE FROM Productos WHERE Producto_id=?");
+            PreparedStatement pstmt = con.prepareStatement("DELETE FROM Categorias WHERE Producto_id=?");
             pstmt.setInt(1, categoria.getId());
             pstmt.executeUpdate();
         } catch (Exception e) {
@@ -61,7 +61,7 @@ public class CategoríaCRUDImp implements CategoriaCRUD {
         Categoria categoria = new Categoria();
         try {
             Connection con = new FarmaciaDb().getConnection();
-            PreparedStatement pstmt = con.prepareStatement("SELECT * FROM Productos WHERE Producto_id=?");
+            PreparedStatement pstmt = con.prepareStatement("SELECT * FROM Categorias WHERE Producto_id=?");
             pstmt.setInt(1,id);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()){

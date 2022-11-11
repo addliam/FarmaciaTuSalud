@@ -243,7 +243,7 @@ public class InterfazAcceder extends javax.swing.JFrame {
                 Thread.sleep(1*delayTime);
                 delayTime += 2000;
             } catch(InterruptedException ex){
-                System.out.println("INTERRUPTED");
+                System.out.println("INTERRUMPIDO");
                 Thread.currentThread().interrupt();
             }         
         }
