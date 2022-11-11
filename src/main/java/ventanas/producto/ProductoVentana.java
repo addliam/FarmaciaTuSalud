@@ -5,8 +5,8 @@ import javax.swing.table.DefaultTableModel;
 
 // Controladores del Modelo Producto
 import backend.model.Producto;
-import backend.controller.ProductoCRUDImp;
-import backend.controller.CategoriaTemp;
+import backend.controller.producto.ProductoCRUDImp;
+import backend.controller.categoria.CategoriaTemp;
 import interfazmenu.MenuAdmin;
 import java.util.List;
 

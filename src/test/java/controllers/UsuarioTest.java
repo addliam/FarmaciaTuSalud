@@ -3,7 +3,7 @@ package controllers;
 import java.util.Random;
 
 import backend.model.Usuario;
-import backend.controller.UsuarioCRUDImp;
+import backend.controller.usuario.UsuarioCRUDImp;
 
 /**
  *

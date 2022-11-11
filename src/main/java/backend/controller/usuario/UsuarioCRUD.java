@@ -1,4 +1,4 @@
-package backend.controller;
+package backend.controller.usuario;
 
 import backend.model.Usuario;
 import java.util.List;

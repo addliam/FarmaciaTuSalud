@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="05523b7e-bcbb-44d7-ac55-5e619da40636" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0_31.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/controller/categoria/CategoriaCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/controller/categoria/CategoríaCRUDImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/model/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/CategoriaTemp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/categoria/CategoriaTemp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/ProductoCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/producto/ProductoCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/ProductoCRUDImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/producto/ProductoCRUDImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/UsuarioCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/usuario/UsuarioCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/UsuarioCRUDImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/usuario/UsuarioCRUDImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interfazmenu/InterfazAcceder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfazmenu/InterfazAcceder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ventanas/producto/ProductoVentana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ventanas/producto/ProductoVentana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controllers/ProductoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllers/ProductoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controllers/UsuarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllers/UsuarioTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HOyKwY7TcM14keRth9lN6iSTEC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/shand/Downloads/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="05523b7e-bcbb-44d7-ac55-5e619da40636" name="Changes" comment="" />
+      <created>1668170365176</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668170365176</updated>
+      <workItem from="1668170368883" duration="805000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
