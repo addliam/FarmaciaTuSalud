@@ -310,11 +310,13 @@ public class ProductoVentana extends javax.swing.JFrame {
         jLabel6.setText("CREAR PRODUCTOS");
 
         jLabel2.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(95, 91, 90));
         jLabel2.setText("Nombre:");
 
         NombreProductoLabel.setFont(new java.awt.Font("Barlow", 0, 16)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(95, 91, 90));
         jLabel7.setText("Descripcion:");
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -327,6 +329,7 @@ public class ProductoVentana extends javax.swing.JFrame {
         jScrollPane1.setViewportView(DescripcionProductoLabel);
 
         jLabel8.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(95, 91, 90));
         jLabel8.setText("Categoría:");
 
         CategoriaIdLabel.setEditable(false);
@@ -338,11 +341,13 @@ public class ProductoVentana extends javax.swing.JFrame {
         CategoriaIdLabel.setPreferredSize(new java.awt.Dimension(80, 24));
 
         jLabel9.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(95, 91, 90));
         jLabel9.setText("Precio de compra:");
 
         PrecioProductoLabel.setFont(new java.awt.Font("Barlow", 0, 16)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(95, 91, 90));
         jLabel10.setText("Stock inicial:");
 
         StockInicialProductoLabel.setFont(new java.awt.Font("Barlow", 0, 16)); // NOI18N
@@ -358,6 +363,7 @@ public class ProductoVentana extends javax.swing.JFrame {
         });
 
         jLabel14.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(95, 91, 90));
         jLabel14.setText("Unidad medida:");
 
         AgregarButton.setBackground(new java.awt.Color(79, 132, 255));
@@ -385,11 +391,13 @@ public class ProductoVentana extends javax.swing.JFrame {
         });
 
         jLabel15.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(95, 91, 90));
         jLabel15.setText("Id:");
 
         jPanel1.setLayout(new java.awt.GridLayout(2, 3));
 
         jLabel16.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(95, 91, 90));
         jLabel16.setText("Cantidad medida:");
 
         CantidadMedidaProductoLabel.setFont(new java.awt.Font("Barlow", 0, 16)); // NOI18N
@@ -545,26 +553,32 @@ public class ProductoVentana extends javax.swing.JFrame {
         PanelEditarEliminar.add(EdEliminarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 420, 150, 50));
 
         jLabel4.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(95, 91, 90));
         jLabel4.setText("Cantidad de Medida");
         PanelEditarEliminar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(95, 91, 90));
         jLabel12.setText("Stock Inicial");
         PanelEditarEliminar.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, 20));
 
         jLabel13.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(95, 91, 90));
         jLabel13.setText("Nombre");
         PanelEditarEliminar.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(95, 91, 90));
         jLabel17.setText("ID");
         PanelEditarEliminar.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(95, 91, 90));
         jLabel18.setText("Precio de Compra");
         PanelEditarEliminar.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(95, 91, 90));
         jLabel19.setText("Unidad de Medida");
         PanelEditarEliminar.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, -1, -1));
 
@@ -592,6 +606,7 @@ public class ProductoVentana extends javax.swing.JFrame {
         PanelEditarEliminar.add(EdProductoPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 180, -1));
 
         jLabel20.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(95, 91, 90));
         jLabel20.setText("Descripción");
         PanelEditarEliminar.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
@@ -623,6 +638,7 @@ public class ProductoVentana extends javax.swing.JFrame {
         PanelEditarEliminar.add(EdEditarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, 150, 50));
 
         jLabel21.setFont(new java.awt.Font("Barlow Condensed", 3, 17)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(95, 91, 90));
         jLabel21.setText("Categoría");
         PanelEditarEliminar.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
 
@@ -684,11 +700,14 @@ public class ProductoVentana extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 1030, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
