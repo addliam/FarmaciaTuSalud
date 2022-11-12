@@ -5,6 +5,7 @@ public class Categoria {
     private int id;
     private String nombre;
     private String desc;
+    private boolean activado = true;
 
     public int getId() {
         return id;
@@ -29,4 +30,6 @@ public class Categoria {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    public void setActivado(boolean activado) {this.activado = activado;}
 }
