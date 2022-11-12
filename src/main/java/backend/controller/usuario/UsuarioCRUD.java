@@ -1,6 +1,6 @@
 package backend.controller.usuario;
 
-import backend.model.Usuario;
+import ventanas.model.Usuario;
 import java.util.List;
 
 /**

@@ -6,8 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="05523b7e-bcbb-44d7-ac55-5e619da40636" name="Changes" comment="componentes alerta en un grid de 3 columnas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/categoria/CategoríaCRUDImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/categoria/CategoriaCRUDImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/categoria/CategoriaCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/categoria/CategoriaCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/categoria/CategoriaCRUDImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/categoria/CategoriaCRUDImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/producto/ProductoCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/producto/ProductoCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/producto/ProductoCRUDImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/producto/ProductoCRUDImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/usuario/UsuarioCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/usuario/UsuarioCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controller/usuario/UsuarioCRUDImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controller/usuario/UsuarioCRUDImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/model/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ventanas/model/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/model/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ventanas/model/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ventanas/model/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/interfazmenu/InterfazAcceder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfazmenu/InterfazAcceder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ventanas/producto/ProductoVentana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ventanas/producto/ProductoVentana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controllers/ProductoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllers/ProductoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controllers/UsuarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllers/UsuarioTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +68,26 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="ProductoVentana" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ventanas.producto.ProductoVentana" />
+      <module name="FarmaciaTuSalud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ventanas.producto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ProductoVentana" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -65,7 +97,8 @@
       <option name="presentableId" value="Default" />
       <updated>1668170365176</updated>
       <workItem from="1668170368883" duration="1118000" />
-      <workItem from="1668178265539" duration="66000" />
+      <workItem from="1668178265539" duration="697000" />
+      <workItem from="1668270816249" duration="647000" />
     </task>
     <task id="LOCAL-00001" summary="componentes alerta en un grid de 3 columnas">
       <created>1668171200073</created>
@@ -74,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668171200073</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="componentes alerta en un grid de 3 columnas">
+      <created>1668178355635</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668178355635</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

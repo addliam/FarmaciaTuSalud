@@ -2,7 +2,7 @@ package backend;
 
 import java.util.Random;
 
-import backend.model.Producto;
+import ventanas.model.Producto;
 import backend.controller.producto.ProductoCRUDImp;
 
 public class Test{

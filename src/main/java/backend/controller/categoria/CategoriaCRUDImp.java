@@ -1,7 +1,7 @@
 package backend.controller.categoria;
 
 import backend.FarmaciaDb;
-import backend.model.Categoria;
+import ventanas.model.Categoria;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ public class CategoriaCRUDImp implements CategoriaCRUD {
     public void save(Categoria categoria) {
         try {
             Connection con = new FarmaciaDb().getConnection();
-            PreparedStatement pstmt = con.prepareStatement("INSERT INTO Categorias(Producto_nombre,Producto_descripcion, Categoria_id) VALUES (?,?,?)");
+            PreparedStatement pstmt = con.prepareStatement("INSERT INTO Categorias(Categoria_nombre,Categoria_descripcion, Categoria_id) VALUES (?,?,?)");
             pstmt.setInt(1, categoria.getId());
             pstmt.setString(2, categoria.getNombre());
             pstmt.setString(3, categoria.getDesc());
@@ -30,7 +30,7 @@ public class CategoriaCRUDImp implements CategoriaCRUD {
     public void update(Categoria categoria) {
         try {
             Connection con = new FarmaciaDb().getConnection();
-            PreparedStatement pstmt = con.prepareStatement("UPDATE Categorias SET Producto_nombre=?, Producto_descripcion=?, Categoria_id=?");
+            PreparedStatement pstmt = con.prepareStatement("UPDATE Categorias SET Categoria_nombre=?, Categoria_descripcion=?, Categoria_id=?");
             pstmt.setString(1,categoria.getNombre());
             pstmt.setString(2, categoria.getDesc());
             pstmt.setInt(3, categoria.getId());
@@ -46,7 +46,7 @@ public class CategoriaCRUDImp implements CategoriaCRUD {
     public void delete(Categoria categoria) {
         try {
             Connection con = new FarmaciaDb().getConnection();
-            PreparedStatement pstmt = con.prepareStatement("DELETE FROM Categorias WHERE Producto_id=?");
+            PreparedStatement pstmt = con.prepareStatement("DELETE FROM Categorias WHERE Categoria_id=?");
             pstmt.setInt(1, categoria.getId());
             pstmt.executeUpdate();
         } catch (Exception e) {
@@ -61,13 +61,13 @@ public class CategoriaCRUDImp implements CategoriaCRUD {
         Categoria categoria = new Categoria();
         try {
             Connection con = new FarmaciaDb().getConnection();
-            PreparedStatement pstmt = con.prepareStatement("SELECT * FROM Categorias WHERE Producto_id=?");
+            PreparedStatement pstmt = con.prepareStatement("SELECT * FROM Categorias WHERE Categoria_id=?");
             pstmt.setInt(1,id);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()){
-                categoria.setId(rs.getInt("Producto_id"));
-                categoria.setNombre(rs.getString("Producto_nombre"));
-                categoria.setDesc(rs.getString("Producto_descripcion"));
+                categoria.setId(rs.getInt("Categoria_id"));
+                categoria.setNombre(rs.getString("Categoria_nombre"));
+                categoria.setDesc(rs.getString("Categoria_descripcion"));
             }
 
         } catch (Exception e) {

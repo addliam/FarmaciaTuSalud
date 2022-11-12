@@ -1,6 +1,6 @@
 package backend.controller.categoria;
 
-import backend.model.Categoria;
+import ventanas.model.Categoria;
 
 import java.util.List;
 

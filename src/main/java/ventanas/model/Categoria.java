@@ -1,4 +1,4 @@
-package backend.model;
+package ventanas.model;
 
 public class Categoria {
 

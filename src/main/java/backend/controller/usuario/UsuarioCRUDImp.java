@@ -3,7 +3,7 @@ package backend.controller.usuario;
 import backend.controller.Util;
 // import database config
 import backend.FarmaciaDb;
-import backend.model.Usuario;
+import ventanas.model.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

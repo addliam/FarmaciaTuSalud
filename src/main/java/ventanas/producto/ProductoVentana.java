@@ -4,7 +4,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
 // Controladores del Modelo Producto
-import backend.model.Producto;
+import ventanas.model.Producto;
 import backend.controller.producto.ProductoCRUDImp;
 import backend.controller.categoria.CategoriaTemp;
 import interfazmenu.MenuAdmin;

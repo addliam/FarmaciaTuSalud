@@ -1,6 +1,6 @@
 package backend.controller.producto;
 
-import backend.model.Producto;
+import ventanas.model.Producto;
 import java.util.List;
 
 /**

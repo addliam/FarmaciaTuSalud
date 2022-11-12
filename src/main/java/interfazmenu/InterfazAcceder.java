@@ -7,7 +7,7 @@ package interfazmenu;
 import java.awt.Color;
 
 // Controladores del usuario y autenticacion
-import backend.model.Usuario;
+import ventanas.model.Usuario;
 import backend.controller.usuario.UsuarioCRUDImp;
 import java.awt.Cursor;
 /**
