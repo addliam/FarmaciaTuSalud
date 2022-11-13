@@ -1,6 +1,5 @@
 package backend.controller.transaccion;
 // import producto model
-import ventanas.model.Producto;
 // import database config
 import backend.FarmaciaDb;
 
