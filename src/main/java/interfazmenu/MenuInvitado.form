@@ -166,7 +166,7 @@
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/inventario.2.jpg"/>
+              <Image iconType="3" name="/images/Transacciones 2.jpg"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -175,17 +175,17 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/inventario.2.jpg"/>
+              <Image iconType="3" name="/images/Transacciones 2.jpg"/>
             </Property>
             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/inventario.3.jpg"/>
+              <Image iconType="3" name="/images/Transacciones 3.jpg"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/noticias.2.jpg"/>
+              <Image iconType="3" name="/images/Alertas 2.jpg"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -194,10 +194,10 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/noticias.2.jpg"/>
+              <Image iconType="3" name="/images/Alertas 2.jpg"/>
             </Property>
             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/noticias.3.jpg"/>
+              <Image iconType="3" name="/images/Alertas 3.jpg"/>
             </Property>
           </Properties>
         </Component>

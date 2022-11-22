@@ -64,11 +64,11 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/noticias.2.jpg"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Alertas 2.jpg"))); // NOI18N
         jButton5.setBorder(null);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/noticias.2.jpg"))); // NOI18N
-        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/noticias.3.jpg"))); // NOI18N
+        jButton5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Alertas 2.jpg"))); // NOI18N
+        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Alertas 3.jpg"))); // NOI18N
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ajustes.2.jpg"))); // NOI18N
         jButton6.setBorder(null);
@@ -99,11 +99,11 @@ public class MenuAdmin extends javax.swing.JFrame {
         jButton7.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lotes.2.jpg"))); // NOI18N
         jButton7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lotes.3.jpg"))); // NOI18N
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.2.jpg"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Transacciones 2.jpg"))); // NOI18N
         jButton8.setBorder(null);
         jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton8.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.2.jpg"))); // NOI18N
-        jButton8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.3.jpg"))); // NOI18N
+        jButton8.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Transacciones 2.jpg"))); // NOI18N
+        jButton8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Transacciones 3.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
