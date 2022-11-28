@@ -333,6 +333,7 @@ public class ProductoVentana extends javax.swing.JFrame {
         jLabel8.setText("Categoría:");
 
         CategoriaIdLabel.setEditable(false);
+        CategoriaIdLabel.setBackground(new java.awt.Color(255, 255, 255));
         CategoriaIdLabel.setFont(new java.awt.Font("Barlow", 0, 16)); // NOI18N
         CategoriaIdLabel.setText("102");
         CategoriaIdLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(2, 8, 2, 8));

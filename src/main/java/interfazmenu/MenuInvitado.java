@@ -74,17 +74,17 @@ public class MenuInvitado extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.2.jpg"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Transacciones 2.jpg"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.2.jpg"))); // NOI18N
-        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.3.jpg"))); // NOI18N
+        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Transacciones 2.jpg"))); // NOI18N
+        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Transacciones 3.jpg"))); // NOI18N
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/noticias.2.jpg"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Alertas 2.jpg"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/noticias.2.jpg"))); // NOI18N
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/noticias.3.jpg"))); // NOI18N
+        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Alertas 2.jpg"))); // NOI18N
+        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Alertas 3.jpg"))); // NOI18N
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ajustes.2.jpg"))); // NOI18N
         jButton5.setToolTipText("");
