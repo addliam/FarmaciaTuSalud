@@ -171,7 +171,7 @@ public class CategoriaVentana extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(127, 181, 255));
 
-        jLabel5.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 22)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Descripción:");
