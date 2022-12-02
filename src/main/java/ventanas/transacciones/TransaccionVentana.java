@@ -41,18 +41,14 @@ public class TransaccionVentana extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
@@ -62,17 +58,13 @@ public class TransaccionVentana extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -175,18 +167,13 @@ public class TransaccionVentana extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
         jLabel7.setText("Cantidad :");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
-        jLabel8.setText("ID Usuario:");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, -1, -1));
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
         jLabel9.setText("Fecha:");
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, -1));
         jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 142, 29));
-        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, 142, 29));
-        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 140, 30));
+        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 142, 29));
         jPanel4.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 240, 140, 30));
 
         jButton1.setBackground(new java.awt.Color(79, 132, 255));
@@ -211,15 +198,10 @@ public class TransaccionVentana extends javax.swing.JFrame {
         });
         jPanel4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, 130, 50));
 
-        jLabel10.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
-        jLabel10.setText("ID Transacción:");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
-
         jLabel11.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
         jLabel11.setText("Tipo:");
         jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, -1));
         jPanel4.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 140, 30));
-        jPanel4.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 140, 30));
 
         jTabbedPane2.addTab("Agregar", jPanel4);
 
@@ -318,10 +300,6 @@ public class TransaccionVentana extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(232, 250, 254));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
-        jLabel12.setText("ID Transacción:");
-        jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
-
         jLabel13.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
         jLabel13.setText("Tipo:");
         jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, -1));
@@ -329,29 +307,17 @@ public class TransaccionVentana extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
         jLabel14.setText("ID Lote:");
         jPanel6.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, -1));
-
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 140, 30));
         jPanel6.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 140, 30));
         jPanel6.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 142, 29));
 
         jLabel15.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
         jLabel15.setText("Cantidad :");
-        jPanel6.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, -1, -1));
-
-        jLabel16.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
-        jLabel16.setText("ID Usuario:");
-        jPanel6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, -1, -1));
+        jPanel6.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Barlow Condensed SemiBold", 2, 24)); // NOI18N
         jLabel17.setText("Fecha:");
         jPanel6.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, -1));
-        jPanel6.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, 142, 29));
-        jPanel6.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 140, 30));
+        jPanel6.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 142, 29));
         jPanel6.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 240, 140, 30));
 
         jButton7.setBackground(new java.awt.Color(79, 132, 255));
@@ -424,31 +390,31 @@ public class TransaccionVentana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        jTextField6.setText("");
+        
         jTextField5.setText("");
         jTextField1.setText("");
         jTextField2.setText("");
-        jTextField3.setText("");
+        
         jTextField4.setText("");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        jTextField7.setText("");
+        
         jTextField8.setText("");
         jTextField9.setText("");
         jTextField10.setText("");
-        jTextField11.setText("");
+        
         jTextField12.setText("");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Transacciones trn = new Transacciones();
         
-        trn.setIDTrans(jTextField6.getText().trim());
+        
         trn.setTipo(jTextField5.getText().trim());
         trn.setIDLote(jTextField1.getText().trim());
         trn.setCant(jTextField2.getText().trim());
-        trn.setIDUsu(jTextField3.getText().trim());
+        
         trn.setFecha(jTextField4.getText().trim());
         
         DefaultTableModel model =(DefaultTableModel)jTable1.getModel();
@@ -472,20 +438,16 @@ public class TransaccionVentana extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         Transacciones trn = new Transacciones();
         
-        trn.setIDTrans(jTextField7.getText().trim());
+        
         trn.setTipo(jTextField8.getText().trim());
         trn.setIDLote(jTextField9.getText().trim());
         trn.setCant(jTextField10.getText().trim());
-        trn.setIDUsu(jTextField11.getText().trim());
+        
         trn.setFecha(jTextField12.getText().trim());
         
         DefaultTableModel model =(DefaultTableModel)jTable2.getModel();
         model.addRow(new Object[]{trn.getIDTrans(),trn.getTipo(),trn.getIDLote(),trn.getCant(),trn.getIDUsu(),trn.getFecha()});
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         DefaultTableModel tblModel = (DefaultTableModel)jTable2.getModel();
@@ -546,19 +508,15 @@ public class TransaccionVentana extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -576,14 +534,10 @@ public class TransaccionVentana extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
