@@ -9,16 +9,34 @@ package ventanas.transacciones;
  * @author Dayron
  */
 public class Transacciones {
-    private String IDTrans, tipo, IDLote, cant, IDUsu, fecha;
+    private String tipo, IDLote, cant, fecha, FVenc, SInicial, Producto;
 
-    public String getIDTrans() {
-        return IDTrans;
+    public String getFVenc() {
+        return FVenc;
     }
 
-    public void setIDTrans(String IDTrans) {
-        this.IDTrans = IDTrans;
+    public void setFVenc(String FVenc) {
+        this.FVenc = FVenc;
     }
 
+    public String getSInicial() {
+        return SInicial;
+    }
+
+    public void setSInicial(String SInicial) {
+        this.SInicial = SInicial;
+    }
+
+    public String getProducto() {
+        return Producto;
+    }
+
+    public void setProducto(String Producto) {
+        this.Producto = Producto;
+    }
+
+    
+    
     public String getTipo() {
         return tipo;
     }
@@ -41,14 +59,6 @@ public class Transacciones {
 
     public void setCant(String cant) {
         this.cant = cant;
-    }
-
-    public String getIDUsu() {
-        return IDUsu;
-    }
-
-    public void setIDUsu(String IDUsu) {
-        this.IDUsu = IDUsu;
     }
 
     public String getFecha() {
