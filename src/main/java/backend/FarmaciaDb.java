@@ -20,7 +20,7 @@ public class FarmaciaDb {
     // https://github.com/cdimascio/dotenv-java/packages/404788
     
     Connection con;
-    final String DB_URL = "jdbc:mysql://147.189.173.157:3306/inventario_farmacia";
+    final String DB_URL = "jdbc:mysql://147.189.168.17:3306/inventario_farmacia";
     final String DB_DRV = "com.mysql.cj.jdbc.Driver";
     Dotenv dotenv = null;
     String DB_USER;
