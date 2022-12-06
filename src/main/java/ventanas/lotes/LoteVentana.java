@@ -7,6 +7,7 @@ package ventanas.lotes;
 /**
  *
  * @author santi
+ * @author codeli4m
  */
 public class LoteVentana extends javax.swing.JFrame {
 
